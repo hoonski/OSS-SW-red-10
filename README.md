@@ -4,4 +4,4 @@
 
 
 
-![](/Users/taewanpark/Documents/GitHub/OSS-SW-red-10/image/opensource_logo.gif)
+![오픈소스](/Users/taewanpark/Documents/GitHub/OSS-SW-red-10/image/opensource_logo.gif)
