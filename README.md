@@ -2,4 +2,6 @@
 
 여기 오픈소스에 대한 소개글이 들어간다.
 
-![자기과시](/Users/taewanpark/Desktop/icon_14.png)
+
+
+![](/Users/taewanpark/Documents/GitHub/OSS-SW-red-10/image/opensource_logo.gif)
