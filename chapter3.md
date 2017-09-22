@@ -18,6 +18,6 @@
 
 이게 무엇일까요?
 
-![bugzilla](/Users/juhansae/Desktop/OSS-SW-red-10/img/bugzilla.png)
+![bugzilla](https://ucarecdn.com/1a1a723e-4501-4337-a28a-311a880721e2/)
 
 네 바로 '버그질라(Bugzilla)'입니다.
