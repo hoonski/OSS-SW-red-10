@@ -12,7 +12,12 @@
    3. 분산형 버전 관리
    4. 문서 및 호스팅 도구
 
-### 1. 버그 트래커
+## 1. 버그 트래커
 
+###1.1 버그 트래커 소개
 
+이게 무엇일까요?
 
+![bugzilla](/Users/juhansae/Desktop/OSS-SW-red-10/img/bugzilla.png)
+
+네 바로 '버그질라(Bugzilla)'입니다.
