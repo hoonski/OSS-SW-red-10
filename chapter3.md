@@ -4,21 +4,6 @@
 
 # Chapter 3. 오픈소스 개발 도구
 
--주한새
-
-## 목차
-
-1. 이슈트래커
-   1. 이슈 관리
-   2. 이슈 관리 시스템
-   3. 이슈 관리 시스템의 필요성
-   4. 이슈 트래커의 종류
-2. 버전 컨트롤
-   1. 버전 컨트롤 소개
-   2. 중앙 집중형 버전 관리
-   3. 분산형 버전 관리
-   4. 문서 및 호스팅 도구
-
 - ## 이슈트래커
 
 ### 1. 이슈 관리
@@ -97,114 +82,186 @@
 
 따라서 이슈 관리 시스템을 잘 활용하는 것이 오픈소스 프로젝트 개발에 중요한 요소입니다. 
 
-[출처]: https://yckim.wordpress.com/2010/02/05/%EC%9D%B4%EC%8A%88%EA%B4%80%EB%A6%AC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/	"이슈관리시스템"
-[출처]: https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8A%88_%EC%B6%94%EC%A0%81_%EC%8B%9C%EC%8A%A4%ED%85%9C	"이슈추적시스템"
-[출처]: https://www.ibm.com/developerworks/community/blogs/9e635b49-09e9-4c23-8999-a4d461aeace2/entry/238?lang=en
-[출처]: https://namu.wiki/w/%EC%9D%B4%EC%8A%88%20%ED%8A%B8%EB%9E%98%EC%BB%A4
-
 ### 4. 이슈트래커의 종류
 
-이슈관리시스템은 대부분 버그관리시스템(Bug Tracking System, BTS)에서 출발 하였으나, 단순히 버그 뿐 아니라 다양한 이슈를 관리할 수 있도록 의미가 확장되고 있다. 
+이슈관리시스템은 대부분 버그관리시스템(Bug Tracking System, BTS)에서 출발 하였으나, 단순히 버그 뿐 아니라 다양한 이슈를 관리할 수 있도록 의미가 확장되고 있습니다. 
 
-### Redmine
+이슈트래커는 개발자와 테스터, 기획자, 운영자 모두의 상호 소통을 위한 도구입니다. 버그 수정 누락 방지와 버그 개선 및 개발 사항을 물어보지 않고도 실시간으로 파악하는데 도움을 줍니다. 따라서 시스템을 도입 이 후부터는 업무를 직접 대화하거나 메신저로 했던 부분을 시스템에 모두 기록을 해야만 합니다.
 
-라이센스: 오픈소스(GNU v2)
+그리고 한가지 선택에 있어서 중요한 부분이 있는데, 커스텀마이징이 쉽거나 개선 할수 있는 언어로 작성된 시스템을 선택해야 합니다. 즉, 이슈 트래커를 잘 선택하는 것이 아주 중요합니다. 대표적인 이슈트래커는 다음과 같습니다.
 
-개발 언어: Ruby
+#### Redmine
 
-홈페이지: 
+|  로고   | ![redmine](data:image/png;base64,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) |
+| :---: | :--------------------------------------: |
+| 라이선스  |               오픈소스(GNU v2)               |
+| 개발 언어 |                   Ruby                   |
+| 홈페이지  |          http://www.redmine.org          |
+|  개발자  |            Jean-Philippe Lang            |
 
-http://www.redmine.org
+**특징**:
 
-오픈소스 ITS 중에서 현재 가장 추천한다.
+- 다중 프로젝트 지원
+- 유연한 역할기반 접근제어
+- 유연한 이슈추적 기능
+- 간트차트와 달력기능 제공
+- 알림, 문서, 파일관리기능 제공
+- 이메일 알람기능
+- 프로젝트별 위키 페이지 제공
+- 프로젝트별 게시판 기능 제공
+- 형상관리 소프트웨어와의 통합(SVN, CVS, Git, Mercurial, Bazaar, Darcs)
+- 다중 LDAP 기반 인증 지원
+- 다국어 지원
+- 여러 데이터베이스 지원
+- 플러그인 기능 지원
 
-자체적으로 다양한 편의 기능을 제공하며 SCM 연동을 지원한다.
 
-(Redmine 기반으로 한 
 
-ChiliProject
+#### Mantis
 
- 비교해 볼 만 합니다.) 
+|  로고   | ![mantis](https://www.mantisbt.org/images/mantis_logo_262x90.png) |
+| :---: | :--------------------------------------: |
+| 라이선스  |               오픈소스(GNU v2)               |
+| 개발 언어 |                   PHP                    |
+| 홈페이지  |         http://www.mantisbt.org          |
+|  원작자  |              Kenzaburo Ito               |
 
-### Mantis
+**특징**:
 
-라이센스: 오픈소스(GNU v2)
+* 각각의 작업이나 전체 프로젝트에 대해서 작업 진행 상태를 도식화 가능
+* 프로젝트 변경 이력에 대한 추적/관리 및 유지보수
+* 프로젝트 참여자들의 작업 내용을 추가/보고/관리
 
-개발 언어:PHP
 
-홈페이지: 
 
-http://www.mantisbt.org
+#### Trac
 
-버그 트래킹 중심으로 개발되어 이슈 관리가 어렵고 다른 툴과 연동이 어려움이 있다.
+|  로고   | ![trac](https://www.edgewall.org/gfx/trac_logo.png) |
+| :---: | :--------------------------------------: |
+| 라이선스  |                오픈소스(BSD)                 |
+| 개발 언어 |                  Python                  |
+| 홈페이지  |         http://trac.edgewall.org         |
+|  개발자  |                엣지월 소프트웨어                 |
 
-간편한 설치 덕분인지 ITS를 시작하려는 분들이 많이 접하지만 장기간 사용하지 않는 제품 중에 속하지 않을까 싶다. 
+**특징**:
 
-### Trac
+* 버전 관리 소프트웨어의 웹 인터페이스 제공
+* 개선점과 버그와 같은 프로젝트의 이슈 트래킹
+* 위키를 통한 문서 관리 및 각 리소스 연동
 
-라이센스: 오픈소스(BSD)
+#### Jira
 
-개발 언어: Python
+|  로고   | ![jira](https://wac-cdn.atlassian.com/dam/jcr:e348b562-4152-4cdc-8a55-3d297e509cc8/Jira%20Software-blue.svg?cdnVersion=hh) |
+| :---: | :--------------------------------------: |
+| 라이선스  |                오픈소스(BSD)                 |
+| 개발 언어 |                   JAVA                   |
+| 홈페이지  | https://www.atlassian.com/software/jira  |
+|  개발자  |                  아틀라시안                   |
 
-홈페이지: 
+**특징**:
 
-http://trac.edgewall.org
+* 맞춤 필터
+* 개발자 도구 통합
+* 3000개 이상의 앱
+* 모든 작업 스타일에 매핑되는 사용자 지정 가능한 워크 플로 만들기 가능
+* 풍부하고 강력한 API
+* 자체 호스팅 및 클라우드 옵션
 
-기본 기능에 충실하며 3rd party 플러그인이 활발하나 설치 및 설정이 어렵다.
+#### Bugzilla
 
-개발자적인 화면은 운영 부서와 커뮤니케이션을 어렵게하는데 한 몫한다. 
+|  로고   | ![jira](https://wac-cdn.atlassian.com/dam/jcr:e348b562-4152-4cdc-8a55-3d297e509cc8/Jira%20Software-blue.svg?cdnVersion=hh) |
+| :---: | :--------------------------------------: |
+| 라이선스  |                모질라 공용 허가서                |
+| 개발 언어 |                   Perl                   |
+| 홈페이지  |         http://www.bugzilla.org/         |
+|  개발자  |                  모질라재단                   |
 
-### Jira
+**특징**:
 
-라이센스: 상용 /오픈소스 프로젝트 혹은 비영리재단은 무료
+* 향상된 성능 및 확장성을 위한 최적화 된 데이터베이스 구조
+* 기밀 유지를 위한 탁월한 보안성
+* 편집 가능한 사용자 프로필 및 포괄적인 전자 메일 기본 설정
+* 사용자 정의 워크플로우, 필드
+* 고도로 사용자 정의 가능한 확장 메커니즘
 
-개발 언어: JAVA
 
-홈페이지: 
 
-https://www.atlassian.com/software/jira
+#### 그 외 이슈 트래커
 
-work-flow 개념 덕분에 개발과 운영 모두 다양하게 활용이 가능하며 atlassian사의 다양한 제품과 연동되는 장점이 있으나 연동 제품도 유료이고 초기 세팅 시 절대 쉽지 않다.
-
-Confluence(위키)
-
-를 사용 중이라면 더욱 추천한다.
-
-### 그 외
-
-- [Bugzilla](http://www.bugzilla.org/) (라이센스: Mozilla public license)
 - [Request Tracker](http://bestpractical.com/rt/) (라이센스: GPL v2)
 - [The Bug Genie](http://www.thebuggenie.com/) (라이센스: MPL)
 - [WebIssues](http://webissues.mimec.org/) (라이센스: GPL v3)
 - [ChiliProject](https://www.chiliproject.org/) (라이센스: GPL v2)
 
-### 선택에 대한 개인적인 생각
 
-개발자와 테스터, 기획자, 운영자 모두의 상호 소통을 위한 도구다.
 
-시스템을 도입하면 버그 수정 누락 방지와 버그 개선 및 개발 사항을 물어보지 않고도 실시간으로 파악하는데 도움을 준다.
 
-그럼으로 시스템을 도입 이 후부터는 업무를 직접 대화하거나 메신저로 했던 부분을 시스템에 모두 기록을 해야만 이득을 볼 수 있다.
 
-그리고 한가지 선택에 있어서 중요한 부분이 있는데, 커스텀마이징이 쉽거나 개선 할수 있는 언어로 작성된 시스템를 선택해야 된다.
 
-업무에 잘 정착해서 이득을 보고 있을 때쯤 이런게 있었으면 하는 욕구가 발생할 것이다.
 
-그때 다른 시스템으로 변경하여 새롭게 시작하는 것보단 커스텀마이징이 쉬운 도구를 선택하는게 좋다.
 
-마무리하며 아래 참고 문서 중 첫번째(Comparison of issue-tracking systems) 항목은 꼭 클릭해봐라.
 
-위키백과 페이지인데 여러 종류의 도구가 잘 비교 정리 되어 있다.
 
-당신이 개발자라면 "
 
-버전 관리 시스템 추천
 
-" 포스팅도 읽어봐주길 바란다.
+
+
 
 ### 참고 문서
 
 - [Comparison of issue-tracking systems](http://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems)
+
 - [Issue tracking system](http://en.wikipedia.org/wiki/Issue_tracking_system)
+
 - [Bug Tracking system](http://en.wikipedia.org/wiki/Bug_tracking_system)
-- [Source code management(SCM)](http://en.wikipedia.org/wiki/Source_code_management)
+
+- [출처]: https://yckim.wordpress.com/2010/02/05/%EC%9D%B4%EC%8A%88%EA%B4%80%EB%A6%AC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/	"이슈관리시스템"
+  [출처]: https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8A%88_%EC%B6%94%EC%A0%81_%EC%8B%9C%EC%8A%A4%ED%85%9C	"이슈추적시스템"
+  [출처]: https://www.ibm.com/developerworks/community/blogs/9e635b49-09e9-4c23-8999-a4d461aeace2/entry/238?lang=en
+  [출처]: https://namu.wiki/w/%EC%9D%B4%EC%8A%88%20%ED%8A%B8%EB%9E%98%EC%BB%A4
+
+  ### 
+
+
+- ## 버전컨트롤
+
+#### 1. 버전 컨트롤 소개
+
+버전 관리 시스템은 **파일의 변화를 시간에 따라 기록하여 과거 특정 시점의 버전을 다시 불러올 수 있는 시스템**입니다. 모든 컴퓨터 파일이 버전 관리의 대상이 될 수 있습니다. 이미지나 레이아웃을 수정할 때마다 각각의 형태를 모두 보존하고 싶은 그래픽 디자이너나 웹 디자이너라면 버전 관리 시스템(Version Control System; VCS)을 사용하는 것이 현명할 수 있습니다. VCS를 사용하면 개별 파일 혹은 프로젝트 전체를 이전 상태로 되돌리거나 시간에 따른 변경 사항을 검토할 수 있으며, 문제가 되는 부분을 누가 마지막으로 수정했는지, 누가 언제 이슈를 만들어냈는지 등을 알 수 있습니다. 또한 파일을 잃어버리거나 무언가 잘못되어도 대개 쉽게 복구할 수 있습니다. 그리고 이 모든 장점을 누리는 데는 큰 노력이 들지 않습니다.
+
+버전 컨트롤을 사용하는 이유를 정리하면 다음과 같습니다.
+
+* 단일 변경 기록으로 이력 추적
+* 파일 버전 관리
+* 릴리스 버전 관리
+* 단일 백업 지점 관리
+* 적극적 리팩토링 가능 (소스 롤백 가능)
+* 일관된 반복 빌드 가능
+* 병렬 개발 및 팀 커뮤니케이션 가능
+
+버전 관리하고자 하는 문서의 변경 사항들에 숫자나 문자로 이뤄진 ("개정판 번호"나 "개정판 레벨"이라고도 불리는) "버전"을 부여해서 구분합니다. "버전"을 통해서 시간적으로 변경 사항과 그 변경 사항을 작성한 작업자를 추적할 수 있습니다.
+
+간단한 버전 관리 방법으로는 처음 작성한 코드에 버전 번호 1을 부여합니다. 변경 사항이 생기면, 버전 번호를 2로 증가 시킵니다. 이처럼 추후 변경 사항이 발생 시마다 버전 번호를 1씩 증가시킵니다. 
+
+이처럼 버전 관리 소프트웨어 도구들은 거의 모든 소프트웨어 개발 프로젝트에서 필수적인 요소로 인식되고 있습니다.
+
+
+
+#### 2. 중앙 집중형 버전 컨트롤
+
+중앙집중식 버전 관리 시스템(Centralized Version Control System; CVCS)은 시스템 외부에 있는 개발자들과 함께 작업하는 문제를 해결하기 위해 개발되었습니다. CVS, Subversion, Perforce와 같은 시스템들이 여기에 속합니다. CVCS에서는 버전 관리되는 모든 파일을 저장하는 하나의 서버와, 이 중앙 서버에서 파일들을 가져오는(checkout) 다수의 클라이언트가 존재합니다. 오랫동안 사용된 이 방식은 지금까지도 버전 관리의 대표적인 방식입니다.
+
+![img](https://git-scm.com/figures/18333fig0102-tn.png)
+
+CVCS는 로컬 VCS에 비해 장점이 많습니다. 누구나 다른 사람들이 무엇을 하고 있는지 알 수 있고, 관리자는 누가 무엇을 할 수 있는지 꼼꼼하게 관리할 수 있습니다. CVCS를 관리하는 것은 수많은 클라이언트의 로컬 데이터베이스를 관리하는 것보다 훨씬 쉽습니다. 
+
+그러나 CVCS는 심각한 단점이 있습니다. 중앙 서버가 잘못되면 모든 것이 잘못된다는 점이죠. 서버가 다운될 경우 서버가 다시 복구될 때까지 다른 사람과의 협업도, 진행 중이던 작업을 버전 관리하는 것도 불가능해집니다. 중앙 데이터베이스가 저장된 하드디스크에 오류가 발생하고 백업도 없다면, 사람들이 각자 자신의 컴퓨터에 가지고 있던 스냅샷 외에는 그동안 쌓인 프로젝트의 이력을 모두 잃게 됩니다. 로컬 VCS 시스템도 같은 문제가 있습니다. 프로젝트의 모든 이력이 한곳에만 있을 경우 이것은 피할 수 없는 문제인 것이죠.
+
+#### 3. 분산형 버전 컨트롤
+
+분산 버전 관리 시스템(Distributed Version Control System; DVCS)은 앞서 말한 문제를 해결하기 위해 개발되었습니다. Git, Mecurial, Bazaar, Darcs 등 DVCS에서는 클라이언트가 파일들의 마지막 스냅샷을 가져오는 대신 저장소(repository)를 통째로 복제합니다. 따라서 서버에 문제가 생겨도 어느 클라이언트든 복제된 저장소를 다시 서버로 복사하면 서버가 복구됩니다. 체크아웃(checkout)을 할 때마다 전체 백업이 일어나는 셈이죠.
+
+![img](https://git-scm.com/figures/18333fig0103-tn.png)
+
+게다가 대부분의 DVCS에서는 다수의 원격 저장소(remote repository)를 갖는 것이 가능하기 때문에 동시에 여러 그룹과 여러 방법으로 함께 작업할 수 있습니다. 이로 인해 계층 모델(hierarchical model) 등 중앙집중 시스템에서는 할 수 없는 다양한 작업 방식(workflow)들을 사용해볼 수 있습니다.
+
