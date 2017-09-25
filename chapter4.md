@@ -174,4 +174,10 @@ FD.io는 Fast Data – input/output의 약어로, 네트워킹에서 데이터 �
 
 
 
-참고 : https://en.wikipedia.org/wiki/LAMP, http://www.itworld.co.kr/news/105411 , https://ko.wikipedia.org/wiki/%EC%95%84%ED%8C%8C%EC%B9%98_%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4, https://ko.wikipedia.org/wiki/, https://ko.wikipedia.org/wiki/MySQL
+참고
+
+- https://en.wikipedia.org/wiki/LAMP
+- http://www.itworld.co.kr/news/105411
+- https://ko.wikipedia.org/wiki/%EC%95%84%ED%8C%8C%EC%B9%98_%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4
+- https://ko.wikipedia.org/wiki/ 
+- https://ko.wikipedia.org/wiki/MySQL
