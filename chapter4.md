@@ -170,6 +170,7 @@ FD.io는 Fast Data – input/output의 약어로, 네트워킹에서 데이터 �
 
 #### 10. 오픈브이스위치(OpenvSwitch)
 
+흔히 OVS라고 부르며, 아파치 라이선스로 배포되는 다계층 오픈소스 가상 스위치입니다. OVS는 네트워킹 환경에서 네트워킹 스위치를 가상으로 또는 소프트웨어로 구현해 사용할 수 있습니다. OVS는 호스트 내의 가상머신 또는 호스트 간 가상머신을 연결하는 데 사용됩니다. 오픈플로우와 같은 일반적인 네트워킹 프로토콜과 트리 아키텍처, VLAN 태깅 및 포트 미러링 관련 표준도 지원합니다.
 
 
 
@@ -178,5 +179,5 @@ FD.io는 Fast Data – input/output의 약어로, 네트워킹에서 데이터 �
 - https://en.wikipedia.org/wiki/LAMP
 - http://www.itworld.co.kr/news/105411
 - https://ko.wikipedia.org/wiki/%EC%95%84%ED%8C%8C%EC%B9%98_%EB%9D%BC%EC%9D%B4%EC%84%A0%EC%8A%A4
-- https://ko.wikipedia.org/wiki/ 
-
+- https://ko.wikipedia.org/wiki/
+- https://ko.wikipedia.org/wiki/MySQL
