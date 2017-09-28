@@ -1,7 +1,3 @@
-
-
-
-
 # Chapter 3. 오픈소스 개발 도구
 
 - ## 이슈트래커
@@ -196,36 +192,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-### 참고 문서
-
-- [Comparison of issue-tracking systems](http://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems)
-
-- [Issue tracking system](http://en.wikipedia.org/wiki/Issue_tracking_system)
-
-- [Bug Tracking system](http://en.wikipedia.org/wiki/Bug_tracking_system)
-
-- [출처]: https://yckim.wordpress.com/2010/02/05/%EC%9D%B4%EC%8A%88%EA%B4%80%EB%A6%AC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/	"이슈관리시스템"
-  [출처]: https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8A%88_%EC%B6%94%EC%A0%81_%EC%8B%9C%EC%8A%A4%ED%85%9C	"이슈추적시스템"
-  [출처]: https://www.ibm.com/developerworks/community/blogs/9e635b49-09e9-4c23-8999-a4d461aeace2/entry/238?lang=en
-  [출처]: https://namu.wiki/w/%EC%9D%B4%EC%8A%88%20%ED%8A%B8%EB%9E%98%EC%BB%A4
-
-  ### 
-
-
 - ## 버전컨트롤
 
-#### 1. 버전 컨트롤 소개
+###1. 버전 컨트롤 소개
 
 버전 관리 시스템은 **파일의 변화를 시간에 따라 기록하여 과거 특정 시점의 버전을 다시 불러올 수 있는 시스템**입니다. 모든 컴퓨터 파일이 버전 관리의 대상이 될 수 있습니다. 이미지나 레이아웃을 수정할 때마다 각각의 형태를 모두 보존하고 싶은 그래픽 디자이너나 웹 디자이너라면 버전 관리 시스템(Version Control System; VCS)을 사용하는 것이 현명할 수 있습니다. VCS를 사용하면 개별 파일 혹은 프로젝트 전체를 이전 상태로 되돌리거나 시간에 따른 변경 사항을 검토할 수 있으며, 문제가 되는 부분을 누가 마지막으로 수정했는지, 누가 언제 이슈를 만들어냈는지 등을 알 수 있습니다. 또한 파일을 잃어버리거나 무언가 잘못되어도 대개 쉽게 복구할 수 있습니다. 그리고 이 모든 장점을 누리는 데는 큰 노력이 들지 않습니다.
 
@@ -245,23 +214,80 @@
 
 이처럼 버전 관리 소프트웨어 도구들은 거의 모든 소프트웨어 개발 프로젝트에서 필수적인 요소로 인식되고 있습니다.
 
+###2. 중앙 집중형 버전 컨트롤
 
-
-#### 2. 중앙 집중형 버전 컨트롤
-
-중앙집중식 버전 관리 시스템(Centralized Version Control System; CVCS)은 시스템 외부에 있는 개발자들과 함께 작업하는 문제를 해결하기 위해 개발되었습니다. CVS, Subversion, Perforce와 같은 시스템들이 여기에 속합니다. CVCS에서는 버전 관리되는 모든 파일을 저장하는 하나의 서버와, 이 중앙 서버에서 파일들을 가져오는(checkout) 다수의 클라이언트가 존재합니다. 오랫동안 사용된 이 방식은 지금까지도 버전 관리의 대표적인 방식입니다.
-
-![img](https://git-scm.com/figures/18333fig0102-tn.png)
+중앙집중식 버전 관리 시스템(Centralized Version Control System; CVCS)은 시스템 외부에 있는 개발자들과 함께 작업하는 문제를 해결하기 위해 개발되었습니다. **CVS, Subversion, Perforce**와 같은 시스템들이 여기에 속합니다. CVCS에서는 버전 관리되는 모든 파일을 저장하는 하나의 서버와, 이 중앙 서버에서 파일들을 가져오는(checkout) 다수의 클라이언트가 존재합니다. 오랫동안 사용된 이 방식은 지금까지도 버전 관리의 대표적인 방식입니다.
 
 CVCS는 로컬 VCS에 비해 장점이 많습니다. 누구나 다른 사람들이 무엇을 하고 있는지 알 수 있고, 관리자는 누가 무엇을 할 수 있는지 꼼꼼하게 관리할 수 있습니다. CVCS를 관리하는 것은 수많은 클라이언트의 로컬 데이터베이스를 관리하는 것보다 훨씬 쉽습니다. 
 
 그러나 CVCS는 심각한 단점이 있습니다. 중앙 서버가 잘못되면 모든 것이 잘못된다는 점이죠. 서버가 다운될 경우 서버가 다시 복구될 때까지 다른 사람과의 협업도, 진행 중이던 작업을 버전 관리하는 것도 불가능해집니다. 중앙 데이터베이스가 저장된 하드디스크에 오류가 발생하고 백업도 없다면, 사람들이 각자 자신의 컴퓨터에 가지고 있던 스냅샷 외에는 그동안 쌓인 프로젝트의 이력을 모두 잃게 됩니다. 로컬 VCS 시스템도 같은 문제가 있습니다. 프로젝트의 모든 이력이 한곳에만 있을 경우 이것은 피할 수 없는 문제인 것이죠.
 
-#### 3. 분산형 버전 컨트롤
+대표적인 중앙 집중형 버전 관리 시스템은 다음과 같이 CVS, Subversion이 있습니다.
 
-분산 버전 관리 시스템(Distributed Version Control System; DVCS)은 앞서 말한 문제를 해결하기 위해 개발되었습니다. Git, Mecurial, Bazaar, Darcs 등 DVCS에서는 클라이언트가 파일들의 마지막 스냅샷을 가져오는 대신 저장소(repository)를 통째로 복제합니다. 따라서 서버에 문제가 생겨도 어느 클라이언트든 복제된 저장소를 다시 서버로 복사하면 서버가 복구됩니다. 체크아웃(checkout)을 할 때마다 전체 백업이 일어나는 셈이죠.
+* CVS
 
-![img](https://git-scm.com/figures/18333fig0103-tn.png)
+CVS(Concurrent Versions System)은 보통 소프트웨어 프로젝트를 진행할 때, 파일로 이뤄진 모든 작업과 모든 변화를 추적하고, 멀리 떨어진 개발자들도 서로 협력하여 작업할 수 있게 합니다. CVS는 GNU 일반 공중 사용 허가서 하에서 배포되며, 오픈 소스 프로젝트에서 널리 사용됩니다. 현재는 CVS가 한계를 맞아, Subversion이 개발되었습니다.
+
+CVS는 몇 가지 한계를 가지고 있습니다.  
+
+```
+- 저장소의 파일 이름을 바꿀 수 없음(제거하고 나서 다시 추가해야함)
+- CVS 프로토콜은 디렉토리의 이동이나 이름 변경을 허용하지 않음
+- 서브 디렉토리의 파일은 모두 지우고 다시 추가해야 함
+- 아스키 코드로 된 파일 이름이 아닌 유니코드 파일을 제한적으로 지원함
+```
+
+CVS를 만들었던 핵심 개발자들 몇몇이 이런 CVS의 한계를 깨닫고 다음에 소개할 Subversion(SVN)을 개발하였습니다.
+
+* Subversion
+
+서브버전은 오픈소스 커뮤니티에 잘 알려져있고, Apache Software Foundation, KDE, GNOME, Free Pascal, GCC, Python, Ruby, Samba, Mon와 같은 많은 오픈 소스 프로젝트에 사용되고 있습니다. CVS와 비교했을 때, 서브 버전의 장점은 다음과 같습니다.
+
+```
+- 원자적으로 쓰기를 지원하므로, 다른 사용자의 쓰기와 엉키지 않음
+- 이름을 바꾸거나, 복사하거나, 파일을 지워도 리비전 기록을 유지함
+- 바이너리 파일도 효율적으로 저장할 수 있음
+- 디렉토리도 버전 관리를 할 수 있음(디렉토리 전체를 빠르게 옮기거나 복사할 수 있으며, 리비전 기록도 그대로 유지됨)
+- 소스 저장소의 크기에 상관없이 일정한 시간 안에 branching이나 tagging을 할 수 있음
+- 소스 저장소로의 접근이 최적화되어 필요없는 네트워크 트래픽을 줄일 수 있음
+```
+
+
+
+###3. 분산형 버전 컨트롤
+
+분산 버전 관리 시스템(Distributed Version Control System; DVCS)은 앞서 말한 문제를 해결하기 위해 개발되었습니다. Git, Mecurial, Bazaar, Darcs 등 DVCS에서는 클라이언트가 파일들의 마지막 스냅샷을 가져오는 대신 저장소(repository)를 통째로 복제합니다. 따라서 서버에 문제가 생겨도 어느 클라이언트든 복제된 저장소를 다시 서버로 복사하면 서버가 복구됩니다. 체크아웃(checkout)을 할 때마다 전체 백업이 일어나는 셈이죠
 
 게다가 대부분의 DVCS에서는 다수의 원격 저장소(remote repository)를 갖는 것이 가능하기 때문에 동시에 여러 그룹과 여러 방법으로 함께 작업할 수 있습니다. 이로 인해 계층 모델(hierarchical model) 등 중앙집중 시스템에서는 할 수 없는 다양한 작업 방식(workflow)들을 사용해볼 수 있습니다.
 
+대표적인 분산형 버전 관리 시스템으로는 다음과 같습니다.
+
+* Mercurial
+
+머큐리얼은 소프트웨어 개발을 위한 크로스 플랫폼 분산 버전 관리 툴입니다. 머큐리얼의 대부분은 파이썬으로 개발되었으며, diff부분은 c를 사용해서 개발되었습니다. 머큐리얼은 기본적으로 명령 줄 인터페이스 프로그램입니다. 모든 명령은 hg로 시작하는데, hg는 수은의 원소 기호이죠.
+
+머큐리얼이 궁극적으로 추구하는 것은 고도의퍼포먼스와 스케일러빌리티입니다. 다시말해, 서버가불필요해야하며(serverless), 분산된(distributed) 협동 개발 플랫폼 형태이어야 합니다. 또한 플레인텍스트 및 바이너리 파일들을 견고히(robustly) 지원해야합니다. 기술적으로 진보된 브랜칭(branching)과 머징(merging) 기능도 가지고있되, 개념적으로는 간결해야합니다. 머큐리얼은 통합 웹 인터페이스를 포함하고 있습니다. 
+
+머큐리얼의 소스 코드는 GNU 일반 공중 사용 허가서 하에 배포됩니다. 머큐리얼의 장점은 웹 기반 인터페이스가 뛰어나다는 점입니다. 소스 코드 뷰어나 체크인 기록등을 모두 볼 수 있으며, 다양한 방식으로 개발 이력을 추적할 수 있습니다.
+
+* Git
+
+Git은 리누스 토르발스가 Subversion을 쓰다가 화가 난 나머지 2주만에 만든 분산형 버전 관리 프로그램입니다. 처음에는 토르발스가 리눅스 커널 관리를 위해서 개발한 것인데, 현재는 다른 곳에도 널리 사용되고 있습니다. 매우 빠른 속도와 분산형 저장소 지원이 특징입니다. 오픈소스 개발의 특성상 여럿이 달려들어 자기 맘에 드는걸 하기도 하며, 또한 뭘 하나 잘못 붙였다 이상한 걸 건드려 망하기 쉬운데, Git는 이런 환경의 특성에 맞게끔 잘 만들어져 있습니다. Git 자체는 오픈소스이며 저장소는 <https://github.com/git/git>입니다.
+
+Git는 다음과 같은 체제를 갖고 있습니다. 일단 Git의 작업 폴더는 전체 기록과 각 기록을 추적할 수 있는 정보를 포함하고 있는 저장소입니다. 즉 자기 컴퓨터에 모든 파일을 다 받아서 하는 셈 입니다.
+
+작업이 끝나면 Git 원격 저장소로 다시 발행하는데, 여기에도 원 저장소를 보호하기 위한 가지치기가 있어 가지의 개발이 완료될 시 원 저장소와 합칠 수 있으며, 또한 개발 중간중간 꼬리표를 매겨 개발을 더 수월하게 할 수 있습니다.
+
+어쩌면 리누스 토르발스가 리눅스를 개발하지 않았더라도, Git을 개발함으로 인해서 존경을 받았을지 모릅니다. 오픈소스는 공산주의라고 혹평하던 마이크로소프트와 트위터, 모질라 재단등에서도 Git를 잘 사용하고 있습니다. 윈도우의 경우 현재 90%까지 Git 처리가 완료되었는데, 하루 8500건의 커밋과 더불어 1760번의 빌드를 거친다고 합니다. 
+
+이러한 강력한 Git을 호스팅해주는 Github란 서비스가 있어, 영리적인 서비스와 오픈소스를 위한 무상 서비스를 모두 제공하고 있습니다. 
+
+### 참고 문서
+
+- [Comparison of issue-tracking systems](http://en.wikipedia.org/wiki/Comparison_of_issue-tracking_systems)
+- [Issue tracking system](http://en.wikipedia.org/wiki/Issue_tracking_system)
+- [Bug Tracking system](http://en.wikipedia.org/wiki/Bug_tracking_system)
+- [https://yckim.wordpress.com/2010/02/05/%EC%9D%B4%EC%8A%88%EA%B4%80%EB%A6%AC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/](https://yckim.wordpress.com/2010/02/05/%EC%9D%B4%EC%8A%88%EA%B4%80%EB%A6%AC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/)
+- [https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8A%88_%EC%B6%94%EC%A0%81_%EC%8B%9C%EC%8A%A4%ED%85%9C](https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%8A%88_%EC%B6%94%EC%A0%81_%EC%8B%9C%EC%8A%A4%ED%85%9C)
+- [https://www.ibm.com/developerworks/community/blogs/9e635b49-09e9-4c23-8999-a4d461aeace2/entry/238?lang=en](https://www.ibm.com/developerworks/community/blogs/9e635b49-09e9-4c23-8999-a4d461aeace2/entry/238?lang=en)
+- [https://namu.wiki/w/%EC%9D%B4%EC%8A%88%20%ED%8A%B8%EB%9E%98%EC%BB%A4](https://namu.wiki/w/%EC%9D%B4%EC%8A%88%20%ED%8A%B8%EB%9E%98%EC%BB%A4)
