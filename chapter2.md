@@ -111,7 +111,7 @@
 2012 년에 Microsoft는 오픈 소스 기준을 사용하여 독점적 인 Microsoft 기술과 타사 기술 간의 간격을 메우기 위해 Microsoft Open Technologies Inc.라는 자회사를 설립했습니다. 이 자회사는 이후 오픈 소스 및 비 Windows 플랫폼에 대한 Microsoft의 입장이 유리 해짐에 따라 Microsoft로 다시 통합되었습니다.
 2016 년 1 월, Microsoft는 MIT 라이센스하에 Chakra를 오픈 소스로 발표했습니다. 코드는 GitHub에서 사용할 수 있습니다.
 
-#####유럽 집행위원회 v Microsoft (2004-2007)                                                                                                      
+#####유럽 집행위원회와 Microsoft의 분쟁 (2004-2007)                                                                                                      
 
 2004 년 유럽 연합 집행위원회 (European Commission)는 워크 그룹 소프트웨어 시장의 상호 운용성과 관련하여 Microsoft가 반 경쟁적 행위를 저질렀다고 판결했습니다. 마이크로소프트는 2001년에 미국에서의 재판에서, 컴퓨터 제조사에게 인터넷 익스플로러를 사전 설치하도록 강요한 사건이 이미 있었습니다.                                                                         
 
